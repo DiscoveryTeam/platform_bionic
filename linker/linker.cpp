@@ -4047,7 +4047,7 @@ bool soinfo::link_image(const soinfo_list_t& global_group, const soinfo_list_t& 
     // Warn if app is targeting sdk version > 22
     if (get_application_target_sdk_version() > 22) {
       PRINT("%s: has text relocations", get_realpath());
-#if defined(ALLOW_TEXT_RELOCATIONS)
+#if defined(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)
       DL_WARN("%s: has text relocations", get_realpath());
 #else
       DL_ERR("%s: has text relocations", get_realpath());
